@@ -2,20 +2,20 @@ name: Deploy to Hosting via FTP
 on:
   push:
     branches:
-      - [cite_start]main # Chạy khi có code push vào nhánh main 
+      - main
 
 jobs:
   web-deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Get latest code
-      uses: actions/checkout@v4
-
-    - name: Sync files to Hosting
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-    
+      - name: Get latest code
+        uses: actions/checkout@v4
+      
+      - name: Sync files to Hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ./htdocs/

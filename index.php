@@ -63,7 +63,7 @@
     <div class="card">
         <h1> PM1_CuoiKy_TranTuanDat </h1>
         
-        <p>Xin chào! Đây là sản phẩm bài thi kết thúc học phần.</p>
+        <p>Xin chào!</p>
         
         <div class="info-box">
             <?php 
